@@ -1,0 +1,97 @@
+body {
+    color: #F5F5F5;
+    background-color:#00BFFF
+;
+}
+.css-145kmo2 {
+    font-size: 0.8rem;
+    color: rgb(38, 39, 48);
+    margin-bottom: 0.01rem;
+}
+.st-cc {
+    color : black;
+    background-color: #FFD700;
+}
+.css-1syfshr {
+    display: flex;
+    -webkit-box-align: center;
+    align-items: center;
+    padding: 1rem;
+    background-color: #FFD700;
+    border-radius: 0.25rem;
+    color: rgb(38, 39, 48);
+}
+.css-3ftxgc {
+    display: inline-flex;
+    -webkit-box-align: center;
+    align-items: center;
+    -webkit-box-pack: center;
+    justify-content: center;
+    font-weight: 400;
+    padding: 0.25rem 0.5rem;
+    border-radius: 0.25rem;
+    margin: 0px;
+    line-height: 1.6;
+    color: inherit;
+    width: 100%;
+    font-size: 0.8rem;
+    background-color: #40E0D0;
+    border: 1px solid rgb(230, 234, 241);
+}
+.css-x0vgxp {
+    position: fixed;
+    inset: 0px;
+    background: #00BFFF;
+    z-index: 1000050;
+    padding: 3.5rem 0.75rem 0.75rem;
+    overflow: auto;
+    display: flex;
+}
+.css-2trqyj {
+    display: inline-flex;
+    -webkit-box-align: center;
+    align-items: center;
+    -webkit-box-pack: center;
+    justify-content: center;
+    font-weight: 400;
+    padding: 0.25rem 0.75rem;
+    border-radius: 0.25rem;
+    margin: 0px;
+    line-height: 1.6;
+    color: white;
+    width: auto;
+    background-color: #40E0D0;
+    border: #7CFC00;
+}
+.css-3xqji8 {
+    display: inline-flex;
+    -webkit-box-align: center;
+    align-items: center;
+    -webkit-box-pack: center;
+    justify-content: center;
+    font-weight: 400;
+    border-radius: 0.25rem;
+    margin: 0px;
+    line-height: 1.6;
+    color: white;
+    width: auto;
+    background-color: #FFD700;
+    border: 1px solid transparent;
+    padding: 0.75rem;
+}
+.reportview-container 
+[class^="st-b"]  {
+    color: black;
+    font-family: monospace;
+}
+.st-bb {
+    background-color: #FFD700;
+    font-size:18px;
+}
+
+footer {
+    color : red;
+    font-family: monospace;
+    background-color: #FFD700;
+}
+</style>

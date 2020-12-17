@@ -1,0 +1,12 @@
+random
+altair
+numpy
+pandas
+streamlit
+base64
+io
+matplotlib
+seaborn
+scipy
+missingno
+scikit-learn
