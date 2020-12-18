@@ -205,7 +205,11 @@ def show_df_highly_cust(df):
         cat_dict[i] = st.multiselect("Select {}".format(i),df[i].unique(),key = k)
         k +=1
     
-    if st.button("Show Dataframe",key = 'fb1'):
+    session_state = SessionState.get(name="3", button_sent=False)
+    button_sent =  st.button("Show Dataframe",key = 'fb1')
+    if button_sent:
+        session_state.button_sent = True
+    if session_state.button_sent:
         temp_df = df.copy()
         list_num = list(num_dict.keys())
         list_cat = list(cat_dict.keys())
@@ -639,10 +643,10 @@ def main():
             cat_all.append('ALL')
             
             if st.checkbox("Display list of all the categorical features."):
-                st.write(cat_feats)
+                st.write("{}".format(cat_feats))
             
             if st.checkbox("Display list of all the numerical features."):
-                st.write(num_feats)
+                st.write("{}".format(num_feats))
             
             if st.checkbox("Display descriptive statics of the dataframe."):
                 st.write(df.describe())
@@ -713,18 +717,21 @@ def main():
                 pass
 
             if st.checkbox("Display Unique values and there value counts for selected columns."):
-                st.write(dict_opt)
-                selected_columns = st.multiselect("Select Columns.",lsnidntac,key = 'm1')
-                if selected_columns == ['ALL_COL']:
-                    selected_columns = lsnidnt[:]
-                elif selected_columns == ['NUM_COL']:
-                    selected_columns = num_feats[:]
-                elif selected_columns == ['CAT_COL']:
-                    selected_columns = cat_feats[:]
+                try:
+                    st.write(dict_opt)
+                    selected_columns = st.multiselect("Select Columns.",lsnidntac,key = 'm1')
+                    if selected_columns == ['ALL_COL']:
+                        selected_columns = lsnidnt[:]
+                    elif selected_columns == ['NUM_COL']:
+                        selected_columns = num_feats[:]
+                    elif selected_columns == ['CAT_COL']:
+                        selected_columns = cat_feats[:]
+                    show_unique_nuni(df,selected_columns)
+                except :
+                    st.write("Please select Target/ID columns")
                     
-                show_unique_nuni(df,selected_columns)
                 
-            if st.checkbox("Change datastype of a column"):
+            if st.checkbox("Change datatype of a column"):
                 col = st.multiselect("Select Columns.",ls,key = '_m1')
                 to_type = st.text_input("Enter the new datatype")
                 if st.buton("Apply") :
@@ -846,11 +853,12 @@ def main():
                     session_state.button_sent = True
                 if session_state.button_sent:
                     source = df
-                    chart = alt.Chart(source).mark_bar().encode(
-                        alt.X(i, bin=True),
-                        y='count()',
-                    )
-                    st.altair_chart(chart)
+                    for i in cols:
+                        chart = alt.Chart(source).mark_bar().encode(
+                            alt.X(i, bin=True),
+                            y='count()',
+                        )
+                        st.altair_chart(chart)
                     
             if st.checkbox("Make line charts"):
                 st.write(dict_opt)
