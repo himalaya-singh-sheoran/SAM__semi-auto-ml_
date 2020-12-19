@@ -1,8 +1,8 @@
 altair
 numpy
 pandas
-streamlit
-pybase64==1.1.1
+streamlit==0.72.0
+pybase64
 matplotlib
 seaborn
 scipy
